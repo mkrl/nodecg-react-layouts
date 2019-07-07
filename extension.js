@@ -6,4 +6,6 @@
 module.exports = nodecg => {
 	const timeReplicant = nodecg.Replicant('timestamp', {defaultValue: 1562259347886})
 	const nameReplicant = nodecg.Replicant('name', {defaultValue: "fellow reactive bundle craftsman"})
+	const layout = nodecg.Replicant('layout', {defaultValue: "standby"})
+	const upnext = nodecg.Replicant('upnext', {defaultValue: "Stream topic"})
 }

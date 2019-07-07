@@ -2,6 +2,8 @@ import React from "react"
 import ReactDOM from "react-dom"
 import NCGStore from './stores/NodecgStore'
 import { replicate } from './stores/NodecgStore'
+import Router from './components/Router'
+import { Reset } from 'styled-reset'
 
 class App extends React.Component {
   constructor() {
@@ -13,8 +15,8 @@ class App extends React.Component {
 
   componentDidMount() {
     // Subscribing to replicant changes
-    replicate("timestamp")
-    replicate("name")
+    replicate("layout")
+    replicate("upnext")
     // We keep all our subscribed replicants in a single "replicants" object
     NCGStore.on("change", () => {
       this.setState({
@@ -24,14 +26,11 @@ class App extends React.Component {
   }
 
   render() {
-    const lastStamp = String(new Date(this.state.replicants.timestamp))
     return (
-      <div>
-        <div className="container">
-          <h1>Hello, {this.state.replicants.name}!</h1>
-          <p>The last time someone pressed the button was {lastStamp}</p>
-        </div>
-      </div>
+      <React.Fragment>
+        <Reset/>
+        <Router layout={this.state.replicants.layout} upnext={this.state.replicants.upnext}/>
+      </React.Fragment>
     )
   }
 }

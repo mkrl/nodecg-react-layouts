@@ -1,5 +1,5 @@
 {
-  "name": "nodecg-react",
+  "name": "nodecg-react-layouts",
   "version": "0.1.0",
   "description": "A boilerplate bundle to get started with NodeCG, React and Flux.",
   "homepage": "https://github.com/mkrl/nodecg-react",
@@ -52,7 +52,9 @@
     "events": "^3.0.0",
     "flux": "^3.1.3",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.3.2",
+    "styled-reset": "^2.0.16"
   },
   "scripts": {
     "start": "parcel watch src/index.html -d graphics --public-url ./",

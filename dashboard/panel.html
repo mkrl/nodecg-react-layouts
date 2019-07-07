@@ -10,30 +10,18 @@
 </head>
 <body>
 	<p>
-		Hello, I'm a default panel that comes with a nodecg-react bundle!
-	</p>
-	<p>
-		You can play with me and directly update your stateful React graphics from here.
-	</p>
-	<p>
-		<button id="stamp">Timestamp!</button>
-	</p>
-	<p>
-		<label for="name">Craftsman name</label>
-		<input id="name" type="text" value="John Doe"/>
-		<button id="nameButton">Set name</button>
+		<label for="name">Up next:</label>
+		<input id="name" type="text" value="BLU vs RED"/>
+		<button id="nameButton">Set topic</button>
 	</p>
 	<script>
-		const timeButton = document.querySelector("#stamp")
 		const nameButton = document.querySelector("#nameButton")
 		const nameInput = document.querySelector("#name")
 
 
-		const timeReplicant = nodecg.Replicant('timestamp')
-		const nameReplicant = nodecg.Replicant('name')
+		const topicReplicant = nodecg.Replicant('upnext')
 
-		timeButton.onclick = () => timeReplicant.value = Date.now()
-		nameButton.onclick = () => nameReplicant.value = nameInput.value
+		nameButton.onclick = () => topicReplicant.value = nameInput.value
 	</script>
 </body>
 </html>
