@@ -18,6 +18,7 @@ class App extends React.Component {
     replicate("layout")
     replicate("upnext")
     replicate("assets:logo")
+    replicate("assets:sponsors")
     // We keep all our subscribed replicants in a single "replicants" object
     NCGStore.on("change", () => {
       this.setState({

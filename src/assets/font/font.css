@@ -1,9 +1,13 @@
+/*  
+  Bebas Neue is an Open Source font family, 
+  originally designed as a single font by Ryoichi Tsunekawa.
+  https://fonts.adobe.com/variations/13407/eula 
+*/
+
 @font-face {
-    /* TODO: add fallback for unsupported characters */
-    font-family: 'BebasNeue';
-    /* There are a handful of fallback / different format fonts available, 
-        however we're only serving one single format to reduce the bundle size */
-    src: url('./BebasNeue-webfont.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'BebasNeue';
+  src: url('./BebasNeueCyrillic.woff2') format('woff2'),
+    url('./BebasNeueCyrillic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
