@@ -1,11 +1,9 @@
 'use strict'
 
-// In this example replicants are being declared in the extension first
-// You can always declare them in panels or graphics
+// Replicants are being declared in the extension first
 
 module.exports = nodecg => {
-	const timeReplicant = nodecg.Replicant('timestamp', {defaultValue: 1562259347886})
-	const nameReplicant = nodecg.Replicant('name', {defaultValue: "fellow reactive bundle craftsman"})
 	const layout = nodecg.Replicant('layout', {defaultValue: "standby"})
+	const layoutList = nodecg.Replicant('layouts', {defaultValue: ["standby", "talking", "game", "stats"]})
 	const upnext = nodecg.Replicant('upnext', {defaultValue: "Stream topic"})
 }

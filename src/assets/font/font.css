@@ -1,12 +1,9 @@
 @font-face {
+    /* TODO: add fallback for unsupported characters */
     font-family: 'BebasNeue';
-    src: url('./BebasNeue-webfont.eot');
-    src: url('./BebasNeue-webfontd41d.eot?#iefix') format('embedded-opentype'),
-         url('./BebasNeue-webfont.woff2') format('woff2'),
-         url('./BebasNeue-webfont.woff') format('woff'),
-         url('./BebasNeue-webfont.ttf') format('truetype'),
-         url('./BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+    /* There are a handful of fallback / different format fonts available, 
+        however we're only serving one single format to reduce the bundle size */
+    src: url('./BebasNeue-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-
 }

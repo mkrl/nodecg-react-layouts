@@ -3,3 +3,4 @@ coverage
 bower_components
 .cache
 graphics/src.*
+graphics/*.woff2

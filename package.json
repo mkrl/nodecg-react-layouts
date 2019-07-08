@@ -24,10 +24,10 @@
     "compatibleRange": "^1.1.1",
     "dashboardPanels": [
       {
-        "name": "panel",
-        "title": "NodeCG React",
+        "name": "general",
+        "title": "General settings",
         "width": 2,
-        "file": "panel.html",
+        "file": "general.html",
         "headerColor": "#525F78"
       }
     ],
@@ -37,6 +37,28 @@
         "width": 1920,
         "height": 1080,
         "singleInstance": true
+      }
+    ],
+    "assetCategories": [
+      {
+        "name": "sponsors",
+        "title": "Sponsors",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "gif",
+          "png"
+        ]
+      },
+      {
+        "name": "logo",
+        "title": "Logo",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "gif",
+          "png"
+        ]
       }
     ]
   },

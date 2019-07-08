@@ -1,0 +1,20 @@
+{
+  "name": "nodecg-react-layouts",
+  "description": "An example bundle with React, and Parcel.",
+  "main": "",
+  "authors": [
+    "[object Object]"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "flux",
+    "nodecg-bundle"
+  ],
+  "homepage": "https://github.com/match-tf/nodecg-react-layouts",
+  "private": true,
+  "dependencies": {
+    "nodecg-replicant-input": "NodeCGElements/nodecg-replicant-input#^1.0.1",
+    "nodecg-typeahead-input": "NodeCGElements/nodecg-typeahead-input#^2.0.1"
+  }
+}
