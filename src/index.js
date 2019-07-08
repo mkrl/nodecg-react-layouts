@@ -17,6 +17,7 @@ class App extends React.Component {
     // Subscribing to replicant changes
     replicate("layout")
     replicate("upnext")
+    replicate("assets:logo")
     // We keep all our subscribed replicants in a single "replicants" object
     NCGStore.on("change", () => {
       this.setState({
@@ -29,7 +30,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Reset/>
-        <Router layout={this.state.replicants.layout} upnext={this.state.replicants.upnext}/>
+        <Router {...this.state.replicants}/>
       </React.Fragment>
     )
   }
