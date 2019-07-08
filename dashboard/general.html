@@ -11,7 +11,11 @@
 	<link rel="import" href="../bower_components/nodecg-typeahead-input/nodecg-typeahead-input.html">
 </head>
 <body>
-		<nodecg-replicant-input label="Up next:" replicant-name="upnext"></nodecg-replicant-input>
-		<nodecg-typeahead-input label="Stream layout:" replicant-name="layouts"></nodecg-typeahead-input>
+	<nodecg-replicant-input label="Up next:" replicant-name="upnext"></nodecg-replicant-input>
+	<nodecg-typeahead-input label="Stream layout:" replicant-name="layouts"></nodecg-typeahead-input>
+<script>
+	const layouts = document.querySelector("nodecg-typeahead-input")
+	NodeCG.thing = layouts
+</script>
 </body>
 </html>

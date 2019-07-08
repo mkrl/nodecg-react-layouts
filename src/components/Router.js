@@ -5,9 +5,9 @@ import Standby from '../layouts/Standby'
 const Router = props => {
   switch (props.layout) {
     case "standby":
-      return <Standby upnext={props.upnext}/>
+      return <Standby {...props}/>
     default:
-      return <Standby />
+      return <Standby {...props}/>
   }
 }
 

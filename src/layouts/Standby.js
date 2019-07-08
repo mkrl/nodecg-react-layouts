@@ -4,7 +4,7 @@ import Bottom from '../components/Bottom'
 
 const Standby = props => (
   <Stream>
-    <Bottom upnext={props.upnext}/>
+    <Bottom logo={props["assets:logo"]} upnext={props.upnext}/>
   </Stream>
 )
 
