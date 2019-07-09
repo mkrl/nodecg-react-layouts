@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 	<link rel="stylesheet" href="./assets/colors.css">
 	<link rel="stylesheet" href="./assets/couch.css">
-	<link rel="import" href="../bower_components/nodecg-replicant-input/nodecg-replicant-input.html">
+	<link rel="import" href="../bower_components/paper-button/paper-button.html">
 	<link rel="import" href="../bower_components/nodecg-typeahead-input/nodecg-typeahead-input.html">
 	<link rel="import" href="../bower_components/nodecg-toggle/nodecg-toggle.html">
 </head>
@@ -38,7 +38,11 @@
 			</div>
 		</div>
 	</section>
-	<nodecg-toggle replicant-name="namesVisible">Toggle nameplates</nodecg-toggle>
+
+	<div class="tools">
+		<nodecg-toggle replicant-name="namesVisible">Toggle nameplates</nodecg-toggle>
+		<paper-button raised>Show for 30 seconds</paper-button>
+	</div>
 
 <script src="./assets/common.js"></script>
 <script>

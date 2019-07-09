@@ -36,6 +36,14 @@
         "width": 4,
         "file": "couch.html",
         "headerColor": "#525F78"
+      },
+      {
+        "name": "people",
+        "workspace": "Hosts and guests",
+        "title": "On-screen talent and guests",
+        "width": 5,
+        "file": "people.html",
+        "headerColor": "#525F78"
       }
     ],
     "graphics": [

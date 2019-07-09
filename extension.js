@@ -7,10 +7,10 @@ module.exports = nodecg => {
 	const layout = nodecg.Replicant('layout', {defaultValue: "standby"})
 	// All available layouts
 	const layoutList = nodecg.Replicant('layouts', {defaultValue: [
-		{"label": "Standby/Idle", "value" : "standby"}, 
-		{"label": "Talking/interview", "value" : "talking"}, 
-		{"label": "In-game camera", "value" : "game"}, 
-		{"label": "Stats/analytics", "value" : "stats"}, 
+		{"label": "Standby/Idle", "value": "standby"}, 
+		{"label": "Talking/interview", "value": "talking"}, 
+		{"label": "In-game camera", "value": "game"}, 
+		{"label": "Stats/analytics", "value": "stats"}, 
 	]})
 	// List of people who appear on screen
 	const people = nodecg.Replicant('people', {defaultValue: [
@@ -20,13 +20,14 @@ module.exports = nodecg => {
 		{"name": "Guest 2", "contact" : "linuxnerd312", "type": "github"}, 
 		{"name": "Guest 3", "contact" : "mkrl.xyz", "type": "web"}, 
 	]})
-	const peopleContactTypes = [
-		"twitter",
-		"steam",
-		"github",
-		"twitch",
-		"web",
-	]
+
+	const types = nodecg.Replicant('contactTypes', {defaultValue: [
+		{"label": "Twitter", "value": "twitter"},
+		{"label": "Steam", "value": "steam"},
+		{"label": "GitHub", "value": "github"},
+		{"label": "Twitch", "value": "twitch"},
+		{"label": "Website", "value": "web"},
+	]})
 
 	// On-screen people at the moment
 	const host1 = nodecg.Replicant('host1', {defaultValue: "Host 1"})

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="./assets/colors.css">
+	<link rel="stylesheet" href="./assets/couch.css">
+	<link rel="import" href="../bower_components/paper-button/paper-button.html">
+	<link rel="import" href="../bower_components/paper-input/paper-input.html">
+	<link rel="import" href="../bower_components/nodecg-typeahead-input/nodecg-typeahead-input.html">
+</head>
+<body>
+
+	<div id="people" class="list">
+		<div class="person">
+			<paper-input name="name" label="Name"></paper-input>
+			<paper-input name="contact" label="Contact"></paper-input>
+			<nodecg-typeahead-input label="Type" replicant-name="contactTypes" item-label-path="label" item-value-path="value"> 
+			</nodecg-typeahead-input>
+			<paper-button>X</paper-button>
+		</div>
+	</div>
+
+<script src="./assets/common.js"></script>
+<script>
+	const visibleRep = nodecg.Replicant('namesVisible')
+	const speakersArea = document.querySelector('#people')
+
+	NodeCG.waitForReplicants(visibleRep)
+  .then(() => {
+		if (visibleRep.value === true) {
+			speakersArea.classList.add("visible")
+		}
+		visibleRep.on('change', (newValue) => {
+				if (newValue === true) {
+					speakersArea.classList.add("visible")
+				} else {
+					speakersArea.classList.remove("visible")
+				}
+		})
+	})
+</script>
+
+</body>
+</html>

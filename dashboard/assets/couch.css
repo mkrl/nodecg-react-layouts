@@ -1,8 +1,6 @@
 #people.visible {
-  background-color: #4f1e1e;
-  border-radius: 10%;
   transform: scale(0.9);
-  opacity: 0.5;
+  opacity: 0.3;
   transition: all 0.3s ease-in-out;
   pointer-events: none;
 }
@@ -12,7 +10,12 @@
   background-color: transparent;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-  margin-bottom: 2rem;
+  min-height: 20rem;
+}
+
+#people .person {
+  display: flex;
+  align-items: flex-end;
 }
 
 .couch {
@@ -36,4 +39,10 @@
 
 .guests .mic {
   max-width: 30%
+}
+
+.tools {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0 1rem 0;
 }
