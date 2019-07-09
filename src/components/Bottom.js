@@ -23,7 +23,7 @@ const Section = styled.div`
   justify-content: center;
   height: 100%;
   padding: 0 2rem;
-  min-width: 400px;
+  min-width: 200px;
   
   & > h1 {
     font-size: 3rem;

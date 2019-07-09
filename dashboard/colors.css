@@ -1,0 +1,9 @@
+/*
+    Dashboard color variables
+*/
+
+body {
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #a1a1a1;
+  --primary-color: orange;
+}
