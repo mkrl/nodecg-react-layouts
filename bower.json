@@ -15,6 +15,7 @@
   "private": true,
   "dependencies": {
     "nodecg-replicant-input": "NodeCGElements/nodecg-replicant-input#^1.0.1",
-    "nodecg-typeahead-input": "NodeCGElements/nodecg-typeahead-input#^2.0.1"
+    "nodecg-typeahead-input": "NodeCGElements/nodecg-typeahead-input#^2.0.1",
+    "nodecg-toggle": "NodeCGElements/nodecg-toggle#^1.0.0"
   }
 }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="./assets/colors.css">
+	<link rel="stylesheet" href="./assets/couch.css">
+	<link rel="import" href="../bower_components/nodecg-replicant-input/nodecg-replicant-input.html">
+	<link rel="import" href="../bower_components/nodecg-typeahead-input/nodecg-typeahead-input.html">
+	<link rel="import" href="../bower_components/nodecg-toggle/nodecg-toggle.html">
+</head>
+<body>
+
+	<section id="people">
+		<div class="couch">
+			<div class="speaker">
+				<nodecg-typeahead-input id="hostInput1" label="Host to the left" replicant-name="people" item-label-path="name" item-value-path="name">
+				</nodecg-typeahead-input>
+			</div>
+			<div class="speaker">
+				<nodecg-typeahead-input id="hostInput2" label="Host to the right" replicant-name="people" item-label-path="name" item-value-path="name">
+				</nodecg-typeahead-input>
+			</div>
+		</div>
+
+		<div class="guests">
+			<img class="mic" src="./assets/mic.svg" />
+			<div class="guest">
+				<nodecg-typeahead-input id="guest1" label="Guest 1" replicant-name="people" item-label-path="name" item-value-path="name">
+				</nodecg-typeahead-input>
+			</div>
+			<div class="guest">
+				<nodecg-typeahead-input id="guest2" label="Guest 1" replicant-name="people" item-label-path="name" item-value-path="name">
+				</nodecg-typeahead-input>
+			</div>
+			<div class="guest">
+				<nodecg-typeahead-input id="guest3" label="Guest 1" replicant-name="people" item-label-path="name" item-value-path="name">
+				</nodecg-typeahead-input>
+			</div>
+		</div>
+	</section>
+	<nodecg-toggle replicant-name="namesVisible">Toggle nameplates</nodecg-toggle>
+
+<script src="./assets/common.js"></script>
+<script>
+	replicateListAndValue("host1", "#hostInput1")
+	replicateListAndValue("host2", "#hostInput2")
+	replicateListAndValue("guest1", "#guest1")
+	replicateListAndValue("guest2", "#guest2")
+	replicateListAndValue("guest3", "#guest3")
+
+	const visibleRep = nodecg.Replicant('namesVisible')
+	const speakersArea = document.querySelector('#people')
+
+	NodeCG.waitForReplicants(visibleRep)
+  .then(() => {
+		if (visibleRep.value === true) {
+			speakersArea.classList.add("visible")
+		}
+		visibleRep.on('change', (newValue) => {
+				if (newValue === true) {
+					speakersArea.classList.add("visible")
+				} else {
+					speakersArea.classList.remove("visible")
+				}
+		})
+	})
+</script>
+
+</body>
+</html>

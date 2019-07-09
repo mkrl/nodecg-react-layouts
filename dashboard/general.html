@@ -2,27 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-	<link rel="stylesheet" href="./colors.css">
+	<link rel="stylesheet" href="./assets/colors.css">
 	<link rel="import" href="../bower_components/nodecg-replicant-input/nodecg-replicant-input.html">
 	<link rel="import" href="../bower_components/nodecg-typeahead-input/nodecg-typeahead-input.html">
 </head>
 <body>
-	<nodecg-replicant-input label="Up next:" replicant-name="upnext"></nodecg-replicant-input>
-	<nodecg-typeahead-input id="layoutInpit" label="Stream layout:" replicant-name="layouts">
-			<template>
-					[[index]]: [[item.label]]
-			</template>
+	<nodecg-replicant-input label="Up next" replicant-name="upnext"></nodecg-replicant-input>
+	<nodecg-typeahead-input id="layoutInpit" label="Stream layout" replicant-name="layouts">
 	</nodecg-typeahead-input>
-<script>
-	const layoutRep = nodecg.Replicant("layout")
-	const layoutInpit = document.querySelector('#layoutInpit')
-	NodeCG.waitForReplicants(layoutRep)
-  .then(() => {
-		layoutInpit.value = layoutRep.value
-	})
-	layoutInpit.addEventListener('value-changed', () => {
-		layoutRep.value = layoutInpit.value
-	})
-</script>
+	<script src="./assets/common.js"></script>
+	<script>
+		replicateListAndValue("layout", "#layoutInpit")
+	</script>
 </body>
 </html>

@@ -29,6 +29,13 @@
         "width": 2,
         "file": "general.html",
         "headerColor": "#525F78"
+      },
+      {
+        "name": "couch",
+        "title": "On-screen people",
+        "width": 4,
+        "file": "couch.html",
+        "headerColor": "#525F78"
       }
     ],
     "graphics": [

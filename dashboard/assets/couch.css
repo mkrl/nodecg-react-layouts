@@ -1,0 +1,39 @@
+#people.visible {
+  background-color: #4f1e1e;
+  border-radius: 10%;
+  transform: scale(0.9);
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+#people {
+  border-radius: 0;
+  background-color: transparent;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 2rem;
+}
+
+.couch {
+  display: flex;
+  justify-content: space-between;
+}
+
+.couch .speaker {
+  max-width: 12rem;
+}
+
+.guests {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guests .guest {
+  max-width: 50%
+}
+
+.guests .mic {
+  max-width: 30%
+}

@@ -1,15 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
+import colors from '../config/colors'
+import pattern from '../assets/pattern'
 import Clock from 'react-live-clock'
 import SponsorLogos from './SponsorLogos'
 
+// Height of the bottom bar
+const bottomHeight = "10"
+
 const Bottomground = styled.section`
-  background-color: #000000c2;
-  height: 10rem;
+  background-color: ${colors.background.primary};
+  background-image: ${pattern};
+  height: ${bottomHeight}rem;
   position: absolute;
   bottom: 0;
   width: 100%;
-  color: white;
   display: flex;
   overflow: hidden;
   justify-content: space-between;
@@ -17,6 +22,7 @@ const Bottomground = styled.section`
 const Section = styled.div`
   flex-grow: ${props => props.grow ? props.grow  : "unset" };
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   align-self: center;
@@ -24,15 +30,20 @@ const Section = styled.div`
   height: 100%;
   padding: 0 2rem;
   min-width: 200px;
+  max-width: 400px;
   
   & > h1 {
-    font-size: 3rem;
+    font-size: ${bottomHeight/3}rem;
   }
   & > h2 {
-    font-size: 2rem;
+    font-size: ${bottomHeight/5}rem;
   }
-  & > img {
-    max-height: 300px;
+  & > div.container {
+    max-width: 300px;
+  }
+  & > div > img {
+    max-width: 100%;
+    height: ${bottomHeight}rem;
   }
 `
 
@@ -44,7 +55,9 @@ const Bottom = props => {
       if (props.logo.length > 0) {
         return (
           <Section>
-            <img src={props.logo[0].url}/>
+            <div className="container">
+              <img src={props.logo[0].url}/>
+            </div>
           </Section>
         )
       } else { return null }
@@ -79,8 +92,8 @@ const Bottom = props => {
          <Clock format={'HH:mm:ss'} ticking={true} />
         </h2>
       </Section>
-      <Logo />
       <Sponsors />
+      <Logo />
     </Bottomground>
   )
 }
