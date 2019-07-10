@@ -1,6 +1,7 @@
 /*
     Main color and visual variables
 */
+
 const colors = {
   background: {
     primary: `#000000c2`,

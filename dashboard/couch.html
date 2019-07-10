@@ -25,15 +25,15 @@
 		<div class="guests">
 			<img class="mic" src="./assets/mic.svg" />
 			<div class="guest">
-				<nodecg-typeahead-input id="guest1" label="Guest 1" replicant-name="people" item-label-path="name" item-value-path="name">
+				<nodecg-typeahead-input id="guest1" label="First guest" replicant-name="people" item-label-path="name" item-value-path="name">
 				</nodecg-typeahead-input>
 			</div>
 			<div class="guest">
-				<nodecg-typeahead-input id="guest2" label="Guest 1" replicant-name="people" item-label-path="name" item-value-path="name">
+				<nodecg-typeahead-input id="guest2" label="Second guest" replicant-name="people" item-label-path="name" item-value-path="name">
 				</nodecg-typeahead-input>
 			</div>
 			<div class="guest">
-				<nodecg-typeahead-input id="guest3" label="Guest 1" replicant-name="people" item-label-path="name" item-value-path="name">
+				<nodecg-typeahead-input id="guest3" label="Third guest" replicant-name="people" item-label-path="name" item-value-path="name">
 				</nodecg-typeahead-input>
 			</div>
 		</div>
@@ -41,19 +41,20 @@
 
 	<div class="tools">
 		<nodecg-toggle replicant-name="namesVisible">Toggle nameplates</nodecg-toggle>
-		<paper-button raised>Show for 30 seconds</paper-button>
+		<paper-button raised id="peakButton">Show for 30 seconds</paper-button>
 	</div>
 
 <script src="./assets/common.js"></script>
 <script>
-	replicateListAndValue("host1", "#hostInput1")
-	replicateListAndValue("host2", "#hostInput2")
-	replicateListAndValue("guest1", "#guest1")
-	replicateListAndValue("guest2", "#guest2")
-	replicateListAndValue("guest3", "#guest3")
+	Bundle.common.replicateListAndValue("host1", "#hostInput1")
+	Bundle.common.replicateListAndValue("host2", "#hostInput2")
+	Bundle.common.replicateListAndValue("guest1", "#guest1")
+	Bundle.common.replicateListAndValue("guest2", "#guest2")
+	Bundle.common.replicateListAndValue("guest3", "#guest3")
 
 	const visibleRep = nodecg.Replicant('namesVisible')
 	const speakersArea = document.querySelector('#people')
+	const peakButton = document.querySelector('#peakButton')
 
 	NodeCG.waitForReplicants(visibleRep)
   .then(() => {
@@ -68,6 +69,18 @@
 				}
 		})
 	})
+
+	// Toggle visibility for 30 seconds
+	peakButton.addEventListener('click', () => {
+		console.log('peaking!')
+		peakButton.disabled = true
+		visibleRep.value = true
+		setTimeout(() => {
+			visibleRep.value = false
+			peakButton.disabled = false
+		}, 30000)
+	})
+
 </script>
 
 </body>

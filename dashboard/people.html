@@ -11,33 +11,19 @@
 <body>
 
 	<div id="people" class="list">
-		<div class="person">
-			<paper-input name="name" label="Name"></paper-input>
-			<paper-input name="contact" label="Contact"></paper-input>
-			<nodecg-typeahead-input label="Type" replicant-name="contactTypes" item-label-path="label" item-value-path="value"> 
+	</div>
+
+	<div class="tools add">
+			<paper-input id="addName" label="Name"></paper-input>
+			<paper-input id="addContact" label="Contact"></paper-input>
+			<nodecg-typeahead-input id="addContactType" label="Type" replicant-name="contactTypes" item-label-path="label" item-value-path="value"> 
 			</nodecg-typeahead-input>
-			<paper-button>X</paper-button>
-		</div>
+			<paper-button raised id="addButton">Add</paper-button>
 	</div>
 
 <script src="./assets/common.js"></script>
+<script src="./assets/people.js"></script>
 <script>
-	const visibleRep = nodecg.Replicant('namesVisible')
-	const speakersArea = document.querySelector('#people')
-
-	NodeCG.waitForReplicants(visibleRep)
-  .then(() => {
-		if (visibleRep.value === true) {
-			speakersArea.classList.add("visible")
-		}
-		visibleRep.on('change', (newValue) => {
-				if (newValue === true) {
-					speakersArea.classList.add("visible")
-				} else {
-					speakersArea.classList.remove("visible")
-				}
-		})
-	})
 </script>
 
 </body>

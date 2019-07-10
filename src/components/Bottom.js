@@ -1,17 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import colors from '../config/colors'
+import variables from '../config/variables'
 import pattern from '../assets/pattern'
 import Clock from 'react-live-clock'
 import SponsorLogos from './SponsorLogos'
 
-// Height of the bottom bar
-const bottomHeight = "10"
-
 const Bottomground = styled.section`
   background-color: ${colors.background.primary};
   background-image: ${pattern};
-  height: ${bottomHeight}rem;
+  height: ${variables.bottomBarHeight}rem;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -33,17 +31,17 @@ const Section = styled.div`
   max-width: 400px;
   
   & > h1 {
-    font-size: ${bottomHeight/3}rem;
+    font-size: ${Number(variables.bottomBarHeight)/3}rem;
   }
   & > h2 {
-    font-size: ${bottomHeight/5}rem;
+    font-size: ${Number(variables.bottomBarHeight)/5}rem;
   }
   & > div.container {
     max-width: 300px;
   }
   & > div > img {
     max-width: 100%;
-    height: ${bottomHeight}rem;
+    height: ${variables.bottomBarHeight}rem;
   }
 `
 

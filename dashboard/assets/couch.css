@@ -10,12 +10,28 @@
   background-color: transparent;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-  min-height: 20rem;
 }
 
 #people .person {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#people .data {
+  padding-bottom: 5px;
+  border-bottom: 1px var(--secondary-text-color) solid;
+  width: 90%;
+}
+
+#people .data span {
+  color: #6c7ea1;
+  margin-left: 0.5rem;
+}
+
+#people .person paper-button {
+  min-width: 3rem;
+  margin-bottom: 7px
 }
 
 .couch {
@@ -45,4 +61,8 @@
   display: flex;
   justify-content: space-between;
   margin: 2rem 0 1rem 0;
+}
+
+.tools.add{
+  align-items: flex-end;
 }
