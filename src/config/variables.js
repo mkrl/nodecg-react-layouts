@@ -3,7 +3,7 @@
 */
 
 const variables = {
-  bottomBarHeight = "10",
+  bottomBarHeight: "10",
 }
 
 export default variables

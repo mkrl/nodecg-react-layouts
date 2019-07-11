@@ -7,3 +7,8 @@ body {
   --secondary-text-color: #a1a1a1;
   --primary-color: orange;
 }
+
+.warning {
+  --paper-toast-background-color: #C04049;
+  --paper-toast-color: white;
+}

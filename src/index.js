@@ -17,6 +17,15 @@ class App extends React.Component {
     // Subscribing to replicant changes
     replicate("layout")
     replicate("upnext")
+
+    replicate("host1")
+    replicate("host2")
+    replicate("guest1")
+    replicate("guest2")
+    replicate("guest3")
+    replicate("namesVisible")
+    replicate("people")
+
     replicate("assets:logo")
     replicate("assets:sponsors")
     // We keep all our subscribed replicants in a single "replicants" object

@@ -17,6 +17,7 @@
     "nodecg-replicant-input": "NodeCGElements/nodecg-replicant-input#^1.0.1",
     "nodecg-typeahead-input": "NodeCGElements/nodecg-typeahead-input#^2.0.1",
     "nodecg-toggle": "NodeCGElements/nodecg-toggle#^1.0.0",
-    "paper-button": "@polymer/paper-button#^3.0.1"
+    "paper-button": "@polymer/paper-button#^3.0.1",
+    "nodecg-toast": "NodeCGElements/nodecg-toast#^1.0.0"
   }
 }

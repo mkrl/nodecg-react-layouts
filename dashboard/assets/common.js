@@ -15,14 +15,30 @@ Bundle.common = (function () {
 		input.addEventListener('value-changed', () => {
 			replicant.value = input.value
 		})
+		replicant.on("change", value => {
+			input.value = value
+		})
 	}
 
 	// Used with stuff like "people" replicant object. Removes an object with given property/value and returns a new array
 	const removeFromArrayByProperty = (array, property, value) => array.filter( item => item[property] !== value )
 
+	// Check if there is an item with given property/value
+	const isUniqueInArrayByProperty = (array = [], property, value) => {
+		let unique = true
+		array.some( element => {
+			if (element[property] === value) {
+				unique = false
+				return true
+			}
+		})
+		return unique
+	}
+
 	return {
 		replicateListAndValue: replicateListAndValue,
-		removeFromArrayByProperty: removeFromArrayByProperty
+		removeFromArrayByProperty: removeFromArrayByProperty,
+		isUniqueInArrayByProperty: isUniqueInArrayByProperty,
 	}
 
 })();

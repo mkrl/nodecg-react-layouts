@@ -14,11 +14,11 @@ module.exports = nodecg => {
 	]})
 	// List of people who appear on screen
 	const people = nodecg.Replicant('people', {defaultValue: [
-		{"name": "Host 1", "contact" : "@DudeMcPerson", "type": "twitter"}, 
-		{"name": "Host 2", "contact" : "biggamer", "type": "steam"}, 
-		{"name": "Guest 1", "contact" : "MinecraftAnalytics", "type": "twitch"}, 
-		{"name": "Guest 2", "contact" : "linuxnerd312", "type": "github"}, 
-		{"name": "Guest 3", "contact" : "mkrl.xyz", "type": "web"}, 
+		{"name": "John Doe", "contact" : "@DudeMcPerson", "type": "twitter"}, 
+		{"name": "Jane Dremel", "contact" : "biggamer", "type": "steam"}, 
+		{"name": "Herobrine_master_2006", "contact" : "MinecraftAnalytics", "type": "twitch"}, 
+		{"name": "Bdale Garbee", "contact" : "linuxnerd312", "type": "github"}, 
+		{"name": "Random bystander", "contact" : "mkrl.xyz", "type": "web"}, 
 	]})
 
 	const types = nodecg.Replicant('contactTypes', {defaultValue: [
@@ -27,14 +27,19 @@ module.exports = nodecg => {
 		{"label": "GitHub", "value": "github"},
 		{"label": "Twitch", "value": "twitch"},
 		{"label": "Website", "value": "web"},
+		{"label": "YouTube", "value": "youtube"},
+		{"label": "Soundcloud", "value": "soundcloud"},
+		{"label": "Reddit", "value": "reddit"},
+		{"label": "Behance", "value": "behance"},
+		{"label": "Telegram", "value": "telegram"},
 	]})
 
 	// On-screen people at the moment
-	const host1 = nodecg.Replicant('host1', {defaultValue: "Host 1"})
-	const host2 = nodecg.Replicant('host2', {defaultValue: "Host 2"})
+	const host1 = nodecg.Replicant('host1', {defaultValue: "John Doe"})
+	const host2 = nodecg.Replicant('host2', {defaultValue: "Jane Dremel"})
 	const guest1 = nodecg.Replicant('guest1', {defaultValue: "Guest 1"})
-	const guest2 = nodecg.Replicant('guest2', {defaultValue: "Guest 2"})
-	const guest3 = nodecg.Replicant('guest3', {defaultValue: "Guest 3"})
+	const guest2 = nodecg.Replicant('guest2', {defaultValue: ""})
+	const guest3 = nodecg.Replicant('guest3', {defaultValue: ""})
 	// Toggle nameplate visibility
 	const namesVisible = nodecg.Replicant('namesVisible', {defaultValue: false})
 

@@ -2,6 +2,12 @@ Bundle.people = (function () {
 
   const visibleRep = nodecg.Replicant('namesVisible')
   const speakersArea = document.querySelector('#people')
+  const addButton = document.querySelector('#addButton')
+  const addName = document.querySelector('#addName')
+  const addContact = document.querySelector('#addContact')
+  const addContactType = document.querySelector('#addContactType')
+  const errorBusy = document.querySelector('#error-busy')
+  const errorDuplicate = document.querySelector('#error-duplicate')
 
 
   NodeCG.waitForReplicants(visibleRep)
@@ -25,23 +31,19 @@ Bundle.people = (function () {
 	const guest2 = nodecg.Replicant('guest2')
   const guest3 = nodecg.Replicant('guest3')
 
-  NodeCG.waitForReplicants(peopleRep)
-  .then(() => {
-    people = peopleRep.value
-    init()
-  })
   peopleRep.on("change", value => {
     people = value
+    render()
   })
 
-  const init = () => {
+  const render = () => {
     if (people) { renderList(people) }
   }
 
   // Check if it's safe to remove a person with given name from the list
   // (not currently picked on couch)
 
-  // TODO: wait for replicants here
+  // TODO: wait for replicants here, make prettier
   const safeToDelete = name => {
       if (name === host1.value 
         || name === host2.value 
@@ -50,7 +52,8 @@ Bundle.people = (function () {
         || name === guest3.value) {
           return false
         } else { 
-          return true }
+          return true
+        }
   }
 
 
@@ -71,20 +74,29 @@ Bundle.people = (function () {
 
         const personData = document.createElement("div")
         personData.classList.add("data")
-        personData.appendChild(document.createTextNode(item.name))
+
+        const personName = document.createElement("span")
+        personName.appendChild(document.createTextNode(item.name))
+        personData.appendChild(personName)
 
         // Adding contact data span if exists
         if (item.contact) {
           const personContact = document.createElement("span")
+          const icon = document.createElement("i")
+          personContact.classList.add("contact")
+          icon.classList.add("social")
+          icon.classList.add(`social-${item.type}`)
+          
           personContact.appendChild(document.createTextNode(item.contact))
+          personContact.appendChild(icon)
           personData.appendChild(personContact)
         }
 
         const button = document.createElement("paper-button")
         button.appendChild(document.createTextNode("X"))
 
-        containerNode.appendChild(personData)
         containerNode.appendChild(button)
+        containerNode.appendChild(personData)
         speakersArea.appendChild(containerNode)
 
         // Binding a removal to every button
@@ -92,10 +104,8 @@ Bundle.people = (function () {
           if (safeToDelete(item.name) === true) {
             people = Bundle.common.removeFromArrayByProperty(people, "name", item.name)
             peopleRep.value = people
-            console.log("ok")
-            init()
           } else {
-            console.log('cant remove person from couch')
+            errorBusy.open()
           }
         })
       })
@@ -103,19 +113,26 @@ Bundle.people = (function () {
     }
   }
 
-  const addButton = document.querySelector('#addButton')
-  const addName = document.querySelector('#addName')
-  const addContact = document.querySelector('#addContact')
-  const addContactType = document.querySelector('#addContactType')
-
   const addNewPerson = () => {
     const newPerson = {
-      name = addName.value,
-      contact = addContact.value,
-      type = addContactType.value,
+      name: addName.value,
+      contact: addContact.value,
+      type: addContactType.value,
     }
-    peopleRep.value.push(newPerson)
-    init()
+    if (addName.value === "") {
+      addName.invalid = true
+    } else {
+      if (Bundle.common.isUniqueInArrayByProperty(people, "name", newPerson.name)) {
+        people.push(newPerson)
+        peopleRep.value = people
+        addName.invalid = false
+        addName.value = ""
+        addContact.value = ""
+        addContactType.value = ""
+      } else {
+        errorDuplicate.show()
+      }
+    }
   }
 
 	addButton.addEventListener('click', () => {

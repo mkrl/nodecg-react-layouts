@@ -15,23 +15,26 @@
 #people .person {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 #people .data {
+  display: flex;
   padding-bottom: 5px;
   border-bottom: 1px var(--secondary-text-color) solid;
-  width: 90%;
+  width: 100%;
+  margin-right: 2rem;
+  margin-left: 1rem;
+  justify-content: space-between;
 }
 
-#people .data span {
+#people .data span.contact {
   color: #6c7ea1;
   margin-left: 0.5rem;
 }
 
 #people .person paper-button {
   min-width: 3rem;
-  margin-bottom: 7px
+  margin: 0;
 }
 
 .couch {

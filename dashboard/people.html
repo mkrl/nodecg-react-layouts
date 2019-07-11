@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
 	<link rel="stylesheet" href="./assets/colors.css">
 	<link rel="stylesheet" href="./assets/couch.css">
+	<link rel="stylesheet" href="./assets/fonts/Social.css">
 	<link rel="import" href="../bower_components/paper-button/paper-button.html">
 	<link rel="import" href="../bower_components/paper-input/paper-input.html">
 	<link rel="import" href="../bower_components/nodecg-typeahead-input/nodecg-typeahead-input.html">
+	<link rel="import" href="../bower_components/nodecg-toast/nodecg-toast.html">
 </head>
 <body>
 
@@ -14,12 +16,15 @@
 	</div>
 
 	<div class="tools add">
-			<paper-input id="addName" label="Name"></paper-input>
+			<paper-input id="addName" error-message="Name can't be blank" label="Name"></paper-input>
 			<paper-input id="addContact" label="Contact"></paper-input>
 			<nodecg-typeahead-input id="addContactType" label="Type" replicant-name="contactTypes" item-label-path="label" item-value-path="value"> 
 			</nodecg-typeahead-input>
 			<paper-button raised id="addButton">Add</paper-button>
 	</div>
+
+	<nodecg-toast id="error-busy" duration="4000" class="warning" text="Can't remove person that is listed in on-screen appearance."></nodecg-toast>
+	<nodecg-toast id="error-duplicate" duration="4000" class="warning" text="A person with this name already exists."></nodecg-toast>
 
 <script src="./assets/common.js"></script>
 <script src="./assets/people.js"></script>
