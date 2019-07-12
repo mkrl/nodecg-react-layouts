@@ -29,7 +29,7 @@ class NCGStore extends EventEmitter {
 // Going slightly against the pattern, but dispatching events
 // in this store kind of makes sense since we only, in fact, have a single "setter" action that will bind our state to corresponding
 // replicant value
-const replicate = (name) => {
+const replicate = name => {
   const replicant = nodecg.Replicant(name)
   NodeCG.waitForReplicants(replicant)
   .then(() => {
@@ -43,7 +43,12 @@ const replicate = (name) => {
   })
 }
 
+// Same, but for arrays
+const replicateMany = (...names) => {
+  names.forEach( name => replicate(name) )
+}
+
 const nodeCGStore = new NCGStore()
 dispatcher.register(nodeCGStore.handleActions.bind(nodeCGStore))
 export default nodeCGStore
-export { replicate }
+export { replicate, replicateMany }

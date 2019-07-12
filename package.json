@@ -31,6 +31,13 @@
         "headerColor": "#525F78"
       },
       {
+        "name": "popups",
+        "title": "Popup panels",
+        "width": 3,
+        "file": "popups.html",
+        "headerColor": "#525F78"
+      },
+      {
         "name": "couch",
         "title": "On-screen people",
         "width": 4,

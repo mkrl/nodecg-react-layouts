@@ -1,9 +1,28 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import NCGStore from './stores/NodecgStore'
-import { replicate } from './stores/NodecgStore'
+import { replicateMany } from './stores/NodecgStore'
 import Router from './components/Router'
 import { Reset } from 'styled-reset'
+
+const replicantNames = [
+  "layout",
+  "upnext",
+  "onnow",
+  "lowerThirdVisible",
+  "lowerThirdTitle",
+  "lowerThirdText",
+  "lowerThirdText",
+  "host1",
+  "host2",
+  "guest1",
+  "guest2",
+  "guest3",
+  "namesVisible",
+  "people",  
+  "assets:logo",
+  "assets:sponsors"
+]
 
 class App extends React.Component {
   constructor() {
@@ -14,20 +33,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // Subscribing to replicant changes
-    replicate("layout")
-    replicate("upnext")
 
-    replicate("host1")
-    replicate("host2")
-    replicate("guest1")
-    replicate("guest2")
-    replicate("guest3")
-    replicate("namesVisible")
-    replicate("people")
+    // Subscribe to replicant changes
+    replicateMany(...replicantNames)
 
-    replicate("assets:logo")
-    replicate("assets:sponsors")
     // We keep all our subscribed replicants in a single "replicants" object
     NCGStore.on("change", () => {
       this.setState({

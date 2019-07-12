@@ -44,5 +44,11 @@ module.exports = nodecg => {
 	const namesVisible = nodecg.Replicant('namesVisible', {defaultValue: false})
 
 	// Up next:
-	const upnext = nodecg.Replicant('upnext', {defaultValue: "Stream topic"})
+	const upnext = nodecg.Replicant('upnext', {defaultValue: "Broadcast"})
+	const onNow = nodecg.Replicant('onnow', {defaultValue: "Interview"})
+
+	// Lower third
+	const lowerThirdTitle = nodecg.Replicant('lowerThirdTitle', {defaultValue: "Something is happening at this very moment!"})
+	const lowerThirdText = nodecg.Replicant('lowerThirdText', {defaultValue: "And it needs your attention"})
+	const lowerThirdVisible = nodecg.Replicant('lowerThirdVisible', {defaultValue: false})
 }

@@ -5,15 +5,14 @@ import colors from '../config/colors'
 import social from '../assets/icons/social.css'
 
 const PlateArea = styled.div`
-  position: absolute;
-  bottom: ${Number(variables.bottomBarHeight)+2}rem;
   width: 100%;
   display: flex;
   overflow: hidden;
   justify-content: space-between;
   align-items: flex-end;
   transition: all 0.3s ease-in-out;
-  height: ${variables.bottomBarHeight}rem;
+  height: ${Number(variables.bottomBarHeight)-2}rem;
+  margin-bottom: 2rem;
   &.hidden {
     height: 0;
     opacity: 0;

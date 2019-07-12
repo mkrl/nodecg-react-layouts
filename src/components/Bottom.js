@@ -10,8 +10,6 @@ const Bottomground = styled.section`
   background-color: ${colors.background.primary};
   background-image: ${pattern};
   height: ${variables.bottomBarHeight}rem;
-  position: absolute;
-  bottom: 0;
   width: 100%;
   display: flex;
   overflow: hidden;
