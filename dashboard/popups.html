@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
 	<link rel="stylesheet" href="./assets/colors.css">
+	<link rel="stylesheet" href="./assets/couch.css">
 	<link rel="import" href="../bower_components/nodecg-replicant-input/nodecg-replicant-input.html">
 	<link rel="import" href="../bower_components/nodecg-typeahead-input/nodecg-typeahead-input.html">
 	<link rel="import" href="../bower_components/nodecg-toggle/nodecg-toggle.html">
 	<link rel="import" href="../bower_components/paper-button/paper-button.html">
 </head>
 <body>
+
 	<h2 style="text-align: right">Lower third</h2>
+
 	<nodecg-replicant-input label="Title" replicant-name="lowerThirdTitle"></nodecg-replicant-input>
 	<nodecg-replicant-input label="Text" replicant-name="lowerThirdText"></nodecg-replicant-input>
-	<nodecg-toggle replicant-name="lowerThirdVisible">Toggle lower third</nodecg-toggle>
-	</nodecg-typeahead-input>
+
+	<div class="tools">
+		<nodecg-toggle replicant-name="lowerThirdVisible">Toggle</nodecg-toggle>
+		<paper-button raised id="peakLowerThirdButton">Show for 30 seconds</paper-button>
+	</div>
 	<script src="./assets/common.js"></script>
 	<script>
 		
