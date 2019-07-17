@@ -12,11 +12,9 @@ const Area = styled.div`
   overflow: hidden;
   margin-bottom: 2rem;
   align-self: flex-end;
-  opacity: 1;
   transition: all 0.3s ease-in-out;
   &.hidden {
-    opacity: 0;
-    width: 0;
+    max-width: 0;
     transition: all 0.4s ease-in-out;
   }
 
@@ -40,12 +38,25 @@ const Area = styled.div`
 
 const Lowerthird = props => {
 
-  return (
-      <Area className={props.visible ? "" : "hidden"}>
-        <h1>{props.title}</h1>
-        <p>{props.text}</p>
-      </Area>
-  )
+  if (props.title && props.text) {
+    if (props.title.length >= props.text.length/2) {
+      return (
+        <Area className={props.visible ? "" : "hidden"}>
+          <h1>{props.title}</h1>
+          <p>{props.text}</p>
+        </Area>
+      )
+    } else {
+      return (
+        <Area className={props.visible ? "" : "hidden"}>
+          <h1>{props.text}</h1>
+          <p>{props.title}</p>
+        </Area>
+      )
+    }
+  } else {
+    return null
+  }
 
 }
 
