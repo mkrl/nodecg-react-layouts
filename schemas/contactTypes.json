@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "array",
+  "description": "List of all social media contact types that are available",
+  "items": {
+    "type": "object",
+    "properties": {
+      "label": {
+        "type": "string",
+        "default": "Twitter",
+        "description": "A social media name that humans can understand"
+      },
+      "value": {
+        "type": "string",
+        "default": "twitter",
+        "description": "An url-safe, kebab/camel case name for internal usage"
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "label",
+      "value"
+    ]
+  }
+}
+

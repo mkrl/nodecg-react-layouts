@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "string",
+	"default": "Intro",
+	"description": "What is currently being broadcasted."
+}

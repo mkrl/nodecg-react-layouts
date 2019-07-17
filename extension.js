@@ -1,17 +1,22 @@
 'use strict'
 
-// Replicants are being declared in the extension first
+// Replicants are being declared in the extension first.
+// When modifying existing replicants / adding new properties be sure to also 
+// update corresponding replicant JSON schema.
 
 module.exports = nodecg => {
+
 	// Current layout
 	const layout = nodecg.Replicant('layout', {defaultValue: "standby"})
+
 	// All available layouts
-	const layoutList = nodecg.Replicant('layouts', {defaultValue: [
+	const layouts = nodecg.Replicant('layouts', {defaultValue: [
 		{"label": "Standby/Idle", "value": "standby"}, 
 		{"label": "Talking/interview", "value": "talking"}, 
 		{"label": "In-game camera", "value": "game"}, 
 		{"label": "Stats/analytics", "value": "stats"}, 
 	]})
+
 	// List of people who appear on screen
 	const people = nodecg.Replicant('people', {defaultValue: [
 		{"name": "John Doe", "contact" : "@DudeMcPerson", "type": "twitter"}, 
@@ -21,6 +26,7 @@ module.exports = nodecg => {
 		{"name": "Random bystander", "contact" : "mkrl.xyz", "type": "web"}, 
 	]})
 
+	// Social media contact types. They are responsible for displaying a corresponding icon next to the contact data
 	const types = nodecg.Replicant('contactTypes', {defaultValue: [
 		{"label": "Twitter", "value": "twitter"},
 		{"label": "Steam", "value": "steam"},
@@ -40,6 +46,7 @@ module.exports = nodecg => {
 	const guest1 = nodecg.Replicant('guest1', {defaultValue: "Guest 1"})
 	const guest2 = nodecg.Replicant('guest2', {defaultValue: ""})
 	const guest3 = nodecg.Replicant('guest3', {defaultValue: ""})
+
 	// Toggle nameplate visibility
 	const namesVisible = nodecg.Replicant('namesVisible', {defaultValue: false})
 

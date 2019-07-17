@@ -1,0 +1,31 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "array",
+  "description": "Pre-filled list of people who have a change to appear on-screen with their contact data included",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "default": "John Doe",
+        "description": "A name or nickname"
+      },
+      "contact": {
+        "type": "string",
+        "default": "@DudeMcPerson",
+        "description": "A social media username/address."
+      },
+      "type": {
+        "type": "string",
+        "pattern": "(twitter|steam|twitch|github|web|youtube|soundcloud|reddit|behance|telegram|^(?!.))",
+        "default": "twitter",
+        "description": "A social media type. Determines an icon type that will be displayed next to person's contact data."
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "name"
+    ]
+  }
+}
+

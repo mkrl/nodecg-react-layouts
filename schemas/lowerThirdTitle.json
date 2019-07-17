@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "string",
+	"default": "Something is happening at this very moment!",
+	"description": "Lower third title text"
+}
