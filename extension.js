@@ -54,6 +54,9 @@ module.exports = nodecg => {
 	const upnext = nodecg.Replicant('upnext', {defaultValue: "Broadcast"})
 	const onNow = nodecg.Replicant('onnow', {defaultValue: "Interview"})
 
+	// Toast message:
+	const toast = nodecg.Replicant('toast', {defaultValue: "A short message to be displayed"})
+
 	// Lower third
 	const lowerThirdTitle = nodecg.Replicant('lowerThirdTitle', {defaultValue: "Something is happening at this very moment!"})
 	const lowerThirdText = nodecg.Replicant('lowerThirdText', {defaultValue: "And it needs your attention"})

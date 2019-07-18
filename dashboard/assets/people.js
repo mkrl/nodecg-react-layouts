@@ -1,7 +1,7 @@
 Bundle.people = (function () {
 
   const visibleRep = nodecg.Replicant('namesVisible')
-  const speakersArea = document.querySelector('#people')
+  const speakersArea = document.querySelector('.people')
   const addButton = document.querySelector('#addButton')
   const addName = document.querySelector('#addName')
   const addContact = document.querySelector('#addContact')

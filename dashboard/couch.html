@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<section id="people">
+	<section class="hideable people">
 		<div class="couch">
 			<div class="speaker">
 				<nodecg-typeahead-input id="hostInput1" label="Host to the left" replicant-name="people" item-label-path="name" item-value-path="name">
@@ -53,22 +53,10 @@
 	Bundle.common.replicateListAndValue("guest3", "#guest3")
 
 	const visibleRep = nodecg.Replicant('namesVisible')
-	const speakersArea = document.querySelector('#people')
+	const speakersArea = document.querySelector('.people')
 	const peakButton = document.querySelector('#peakButton')
 
-	NodeCG.waitForReplicants(visibleRep)
-  .then(() => {
-		if (visibleRep.value === true) {
-			speakersArea.classList.add("visible")
-		}
-		visibleRep.on('change', (newValue) => {
-				if (newValue === true) {
-					speakersArea.classList.add("visible")
-				} else {
-					speakersArea.classList.remove("visible")
-				}
-		})
-	})
+	Bundle.common.replicateBooleanToDisableArea(visibleRep, speakersArea)
 
 	// Toggle visibility for 30 seconds
 	// TODO: move this to extension

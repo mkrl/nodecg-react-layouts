@@ -3,9 +3,11 @@ import Stream from '../components/Stream'
 import Bottom from '../components/Bottom'
 import Nameplates from '../components/Nameplates'
 import Lowerthird from '../components/Lowerthird'
+import Message from '../components/Message'
 
 const Standby = props => (
   <Stream>
+    <Message />
     <Lowerthird title={props.lowerThirdTitle} text={props.lowerThirdText} visible={props.lowerThirdVisible}/>
     <Nameplates host1={props.host1}
                 host2={props.host2}

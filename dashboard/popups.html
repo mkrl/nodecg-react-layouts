@@ -13,16 +13,53 @@
 
 	<h2 style="text-align: right">Lower third</h2>
 
-	<nodecg-replicant-input label="Title" replicant-name="lowerThirdTitle"></nodecg-replicant-input>
-	<nodecg-replicant-input label="Text" replicant-name="lowerThirdText"></nodecg-replicant-input>
+	<div id="lowerThirdInput" class="hideable">
+		<nodecg-replicant-input label="Title" replicant-name="lowerThirdTitle"></nodecg-replicant-input>
+		<nodecg-replicant-input label="Text" replicant-name="lowerThirdText"></nodecg-replicant-input>
+	</div>
 
 	<div class="tools">
 		<nodecg-toggle replicant-name="lowerThirdVisible">Toggle</nodecg-toggle>
 		<paper-button raised id="peakLowerThirdButton">Show for 30 seconds</paper-button>
 	</div>
+
+	<hr>
+
+	<h2 style="text-align: right">Top left toast</h2>
+
+	<nodecg-replicant-input id="toastInput" label="Message" replicant-name="toast"></nodecg-replicant-input>
+
+	<div class="tools">
+			<paper-button raised id="toastButton">Send a message</paper-button>
+	</div>
+
 	<script src="./assets/common.js"></script>
 	<script>
-		
+		const lowerThirdArea = document.querySelector("#lowerThirdInput")
+		const peakLowerThirdButton = document.querySelector("#peakLowerThirdButton")
+		const toastButton = document.querySelector("#toastButton")
+		const toastInput = document.querySelector("#toastInput")
+
+		const visibleRep = nodecg.Replicant('lowerThirdVisible')
+
+		Bundle.common.replicateBooleanToDisableArea(visibleRep, lowerThirdArea)
+
+		// Toggle visibility for 30 seconds
+		// TODO: move this to extension
+		peakLowerThirdButton.addEventListener('click', () => {
+			peakLowerThirdButton.disabled = true
+			visibleRep.value = true
+			setTimeout(() => {
+				visibleRep.value = false
+				peakLowerThirdButton.disabled = false
+			}, 30000)
+		})
+
+		toastButton.addEventListener('click', () => {
+			nodecg.sendMessage("toastMessage", toastInput.value)
+		})
+
+
 	</script>
 </body>
 </html>

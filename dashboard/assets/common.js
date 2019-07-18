@@ -20,6 +20,25 @@ Bundle.common = (function () {
 		})
 	}
 
+	// Toggle "visible" class on an area depending on a boolean replicant value. Accepts replicant object and area node.
+	// TODO: make this more consistent and accept name and selector instead
+	const replicateBooleanToDisableArea = (replicant, area) => {
+	
+		NodeCG.waitForReplicants(visibleRep)
+		.then(() => {
+			if (visibleRep.value === true) {
+				area.classList.add("visible")
+			}
+			visibleRep.on('change', (newValue) => {
+					if (newValue === true) {
+						area.classList.add("visible")
+					} else {
+						area.classList.remove("visible")
+					}
+			})
+		})
+	}
+
 	// Used with stuff like "people" replicant object. Removes an object with given property/value and returns a new array
 	const removeFromArrayByProperty = (array, property, value) => array.filter( item => item[property] !== value )
 
@@ -39,6 +58,7 @@ Bundle.common = (function () {
 		replicateListAndValue: replicateListAndValue,
 		removeFromArrayByProperty: removeFromArrayByProperty,
 		isUniqueInArrayByProperty: isUniqueInArrayByProperty,
+		replicateBooleanToDisableArea: replicateBooleanToDisableArea,
 	}
 
 })();

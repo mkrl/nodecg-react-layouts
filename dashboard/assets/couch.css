@@ -1,23 +1,22 @@
-#people.visible {
+.hideable.visible {
   transform: scale(0.9);
   opacity: 0.3;
   transition: all 0.3s ease-in-out;
   pointer-events: none;
 }
 
-#people {
+.hideable {
   border-radius: 0;
-  background-color: transparent;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
 
-#people .person {
+.people .person {
   display: flex;
   align-items: center;
 }
 
-#people .data {
+.people .data {
   display: flex;
   padding-bottom: 5px;
   border-bottom: 1px var(--secondary-text-color) solid;
@@ -27,12 +26,12 @@
   justify-content: space-between;
 }
 
-#people .data span.contact {
+.people .data span.contact {
   color: #6c7ea1;
   margin-left: 0.5rem;
 }
 
-#people .person paper-button {
+.people .person paper-button {
   min-width: 3rem;
   margin: 0;
 }
@@ -68,4 +67,8 @@
 
 .tools.add{
   align-items: flex-end;
+}
+
+hr {
+  margin: 2rem 0;
 }

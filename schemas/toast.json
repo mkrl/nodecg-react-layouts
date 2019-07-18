@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "string",
+	"default": "A toasty on-screen message",
+	"description": "A message that will be displayed on screen for a certain amount of time."
+}
