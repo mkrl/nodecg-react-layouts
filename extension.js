@@ -21,9 +21,9 @@ module.exports = nodecg => {
 	const people = nodecg.Replicant('people', {defaultValue: [
 		{"name": "John Doe", "contact" : "@DudeMcPerson", "type": "twitter"}, 
 		{"name": "Jane Dremel", "contact" : "biggamer", "type": "steam"}, 
-		{"name": "Herobrine_master_2006", "contact" : "MinecraftAnalytics", "type": "twitch"}, 
-		{"name": "Bdale Garbee", "contact" : "linuxnerd312", "type": "github"}, 
-		{"name": "Random bystander", "contact" : "mkrl.xyz", "type": "web"}, 
+		{"name": "Bert", "contact" : "MinecraftAnalytics", "type": "twitch"}, 
+		{"name": "Bdale", "contact" : "linuxnerd312", "type": "github"}, 
+		{"name": "Bystander", "contact" : "mkrl.xyz", "type": "web"}, 
 	]})
 
 	// Social media contact types. They are responsible for displaying a corresponding icon next to the contact data
@@ -43,7 +43,7 @@ module.exports = nodecg => {
 	// On-screen people at the moment
 	const host1 = nodecg.Replicant('host1', {defaultValue: "John Doe"})
 	const host2 = nodecg.Replicant('host2', {defaultValue: "Jane Dremel"})
-	const guest1 = nodecg.Replicant('guest1', {defaultValue: "Guest 1"})
+	const guest1 = nodecg.Replicant('guest1', {defaultValue: ""})
 	const guest2 = nodecg.Replicant('guest2', {defaultValue: ""})
 	const guest3 = nodecg.Replicant('guest3', {defaultValue: ""})
 
@@ -53,6 +53,7 @@ module.exports = nodecg => {
 	// Up next:
 	const upnext = nodecg.Replicant('upnext', {defaultValue: "Broadcast"})
 	const onNow = nodecg.Replicant('onnow', {defaultValue: "Interview"})
+	const title = nodecg.Replicant('title', {defaultValue: "Show name"})
 
 	// Toast message:
 	const toast = nodecg.Replicant('toast', {defaultValue: "A short message to be displayed"})

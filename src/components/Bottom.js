@@ -9,7 +9,7 @@ import SponsorLogos from './SponsorLogos'
 const Bottomground = styled.section`
   background-color: ${colors.background.primary};
   background-image: ${pattern};
-  height: ${variables.bottomBarHeight}rem;
+  height: ${props => props.baseHeight}rem;
   width: 100%;
   display: flex;
   overflow: hidden;
@@ -24,33 +24,36 @@ const Section = styled.div`
   align-self: center;
   justify-content: center;
   height: 100%;
-  padding: 0 2rem;
+  padding: 0 ${props => Number(props.baseHeight)/5}rem;
   min-width: 200px;
   max-width: 400px;
   
   & > h1 {
-    font-size: ${Number(variables.bottomBarHeight)/3}rem;
+    text-align: center;
+    font-size: ${props => Number(props.baseHeight)/3}rem;
   }
   & > h2 {
-    font-size: ${Number(variables.bottomBarHeight)/5}rem;
+    font-size: ${props => Number(props.baseHeight)/5}rem;
   }
   & > div.container {
     max-width: 300px;
   }
   & > div > img {
     max-width: 100%;
-    height: ${variables.bottomBarHeight}rem;
+    height: ${props => props.baseHeight}rem;
   }
 `
 
 
 const Bottom = props => {
 
+  const baseHeight = Number(variables.bottomBarHeight) * props.height
+
   const Logo = () => {
     if (props.logo) {
       if (props.logo.length > 0) {
         return (
-          <Section>
+          <Section baseHeight={baseHeight}>
             <div className="container">
               <img src={props.logo[0].url}/>
             </div>
@@ -66,7 +69,7 @@ const Bottom = props => {
     if (props.sponsorLogos) {
       if (props.sponsorLogos.length > 0) {
         return (
-          <Section>
+          <Section baseHeight={baseHeight}>
             <SponsorLogos logoArray={props.sponsorLogos}/>
           </Section>
         )
@@ -77,12 +80,12 @@ const Bottom = props => {
   }
 
   return (
-    <Bottomground>
-      <Section>
+    <Bottomground baseHeight={baseHeight}>
+      <Section baseHeight={baseHeight}>
         <h1>Up next</h1>
         <h2>{props.upnext}</h2>
       </Section>
-      <Section>
+      <Section baseHeight={baseHeight}>
         <h1>Local Time</h1>
         <h2>
          <Clock format={'HH:mm:ss'} ticking={true} />

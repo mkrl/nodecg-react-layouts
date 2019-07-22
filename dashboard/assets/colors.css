@@ -12,3 +12,7 @@ body {
   --paper-toast-background-color: #C04049;
   --paper-toast-color: white;
 }
+
+hr {
+  margin: 2rem 0;
+}

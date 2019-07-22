@@ -84,7 +84,7 @@
       }
     ]
   },
-  "repository": "git@github.com:mkrl/nodecg-react.git",
+  "repository": "git@github.com:mkrl/nodecg-react-layouts.git",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.3",

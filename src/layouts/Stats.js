@@ -1,15 +1,19 @@
 import React from 'react'
 import Stream from '../components/Stream'
-import Bottom from '../components/Bottom'
+import Top from '../components/Top'
 import Nameplates from '../components/Nameplates'
 import Lowerthird from '../components/Lowerthird'
 import Message from '../components/Message'
 
 const Standby = props => (
   <Stream>
+    <Top 
+                onnow={props.onnow} 
+                height={2} 
+                title={props.title}/>
     <Message />
     <Lowerthird title={props.lowerThirdTitle}
-                text={props.lowerThirdText}
+                text={props.lowerThirdText} 
                 visible={props.lowerThirdVisible}/>
     <Nameplates host1={props.host1}
                 host2={props.host2}
@@ -18,10 +22,6 @@ const Standby = props => (
                 guest3={props.guest3}
                 people={props.people}
                 visible={props.namesVisible}/>
-    <Bottom height={1}
-            logo={props["assets:logo"]}
-            sponsorLogos={props["assets:sponsors"]}
-            upnext={props.upnext}/>
   </Stream>
 )
 

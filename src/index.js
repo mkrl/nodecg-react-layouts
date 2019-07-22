@@ -9,6 +9,7 @@ const replicantNames = [
   "layout",
   "upnext",
   "onnow",
+  "title",
   "lowerThirdVisible",
   "lowerThirdTitle",
   "lowerThirdText",

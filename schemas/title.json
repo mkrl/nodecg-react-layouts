@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "string",
+	"default": "Show name",
+	"description": "General title that's being displayed in certain layout components."
+}
