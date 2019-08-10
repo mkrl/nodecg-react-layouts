@@ -1,6 +1,7 @@
 import React from 'react'
 import Standby from '../layouts/Standby'
 import Stats from '../layouts/Stats'
+import Game from '../layouts/Game'
 
 // Render a layout depending on 'layout' replicant value
 const Router = props => {
@@ -9,6 +10,8 @@ const Router = props => {
       return <Standby {...props}/>
     case "stats":
       return <Stats {...props}/>
+    case "game":
+      return <Game {...props}/>
     default:
       return <Standby {...props}/>
   }

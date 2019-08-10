@@ -77,6 +77,8 @@ const Nameplates = props => {
   let host1 = {}
   let host2 = {}
   let guest1 = {}
+  let guest2 = {}
+  let guest3 = {}
   if (props.people) {
     people = props.people
   }
@@ -92,6 +94,12 @@ const Nameplates = props => {
   if ((props.guest1)&&(props.people)) {  
     guest1 = getPersonData(props.guest1)
   }
+  if ((props.guest2)&&(props.people)) {  
+    guest2 = getPersonData(props.guest2)
+  }
+  if ((props.guest3)&&(props.people)) {  
+    guest3 = getPersonData(props.guest3)
+  }
 
   return (
     <PlateArea className={props.visible ? "" : "hidden"}>
@@ -102,6 +110,14 @@ const Nameplates = props => {
       <Plate className={props.guest1 ? "" : "hidden"}>
         <h1>{guest1.name}</h1>
         <h2><i className={"social social-"+guest1.type}></i>{guest1.contact}</h2>
+      </Plate>
+      <Plate className={props.guest2 ? "" : "hidden"}>
+        <h1>{guest2.name}</h1>
+        <h2><i className={"social social-"+guest2.type}></i>{guest2.contact}</h2>
+      </Plate>
+      <Plate className={props.guest3 ? "" : "hidden"}>
+        <h1>{guest3.name}</h1>
+        <h2><i className={"social social-"+guest3.type}></i>{guest3.contact}</h2>
       </Plate>
       <Plate className={props.host2 ? "" : "hidden"}>
         <h1>{host2.name}</h1>
