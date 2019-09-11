@@ -13,6 +13,7 @@ const Router = props => {
     case "game":
       return <Game {...props}/>
     default:
+      // Fallback to standby for unknown layouts
       return <Standby {...props}/>
   }
 }
