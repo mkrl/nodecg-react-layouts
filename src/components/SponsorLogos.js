@@ -3,12 +3,30 @@ import { Slide } from 'react-slideshow-image'
 import { createGlobalStyle } from 'styled-components'
 
 // TODO: make this mess prettier
+// Styles to conquer react-slideshow-image stupidity
 const SlideStyle = createGlobalStyle`
-  .react-slideshow-container {
-    width: 400px;
-  }
-  .react-slideshow-container img{
-    max-width: 100%;
+  .slide-wrapper {
+    height: 100%;
+    padding: 1rem;
+    & > div {
+      height: 100%;
+    }
+
+    .react-slideshow-container {
+      width: 400px;
+      height: 100%;
+      & img {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      & * {
+        height: 100%;
+      }
+      & .images-wrap div {
+        display: flex;
+      }
+    }
+
   }
 `
 
@@ -27,9 +45,11 @@ const SponsorLogos = props => {
       return (
         <>
           <SlideStyle />
-          <Slide {...properties}>
-            {images}
-          </Slide>
+          <div className="slide-wrapper">
+            <Slide {...properties}>
+              {images}
+            </Slide>
+          </div>
         </>
       )
     } else { return null }

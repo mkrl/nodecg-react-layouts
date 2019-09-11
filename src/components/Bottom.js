@@ -40,7 +40,6 @@ const Section = styled.div`
   }
   & > div > img {
     max-width: 100%;
-    height: ${props => props.baseHeight}rem;
   }
 `
 
