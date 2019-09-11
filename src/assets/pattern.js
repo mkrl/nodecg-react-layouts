@@ -13,6 +13,6 @@ const rawPattern = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
 // Encoding large SVG in base64 is not the best idea, since it can end up taking
 // more space that its' raw version, but since we don't care about the traffic and it's easy to use - that works
-const pattern = () => `url("data:image/svg+xml;base64,${btoa(rawPattern)}")`
+const pattern = () => `url("data:image/svg+xml;base64,${window.btoa(rawPattern)}")`
 
 export default pattern

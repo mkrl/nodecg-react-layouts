@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import variables from '../config/variables'
 import colors from '../config/colors'
+// (imported css works this way just fine)
+// eslint-disable-next-line no-unused-vars
 import social from '../assets/icons/social.css'
 
 const PlateArea = styled.div`
@@ -11,7 +13,7 @@ const PlateArea = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   transition: all 0.3s ease-in-out;
-  height: ${Number(variables.bottomBarHeight)-2}rem;
+  height: ${Number(variables.bottomBarHeight) - 2}rem;
   margin-bottom: 2rem;
   &.hidden {
     height: 0;
@@ -85,43 +87,43 @@ const Nameplates = props => {
   const getPersonData = person => people.find(item => item.name === person)
 
   // TODO: refactor this
-  if ((props.host1)&&(props.people)) {  
+  if ((props.host1) && (props.people)) {
     host1 = getPersonData(props.host1)
   }
-  if ((props.host2)&&(props.people)) {  
+  if ((props.host2) && (props.people)) {
     host2 = getPersonData(props.host2)
   }
-  if ((props.guest1)&&(props.people)) {  
+  if ((props.guest1) && (props.people)) {
     guest1 = getPersonData(props.guest1)
   }
-  if ((props.guest2)&&(props.people)) {  
+  if ((props.guest2) && (props.people)) {
     guest2 = getPersonData(props.guest2)
   }
-  if ((props.guest3)&&(props.people)) {  
+  if ((props.guest3) && (props.people)) {
     guest3 = getPersonData(props.guest3)
   }
 
   return (
-    <PlateArea className={props.visible ? "" : "hidden"}>
-      <Plate className={props.host1 ? "" : "hidden"}>
+    <PlateArea className={props.visible ? '' : 'hidden'}>
+      <Plate className={props.host1 ? '' : 'hidden'}>
         <h1>{host1.name}</h1>
-        <h2><i className={"social social-"+host1.type}></i>{host1.contact}</h2>
+        <h2><i className={'social social-' + host1.type} />{host1.contact}</h2>
       </Plate>
-      <Plate className={props.guest1 ? "" : "hidden"}>
+      <Plate className={props.guest1 ? '' : 'hidden'}>
         <h1>{guest1.name}</h1>
-        <h2><i className={"social social-"+guest1.type}></i>{guest1.contact}</h2>
+        <h2><i className={'social social-' + guest1.type} />{guest1.contact}</h2>
       </Plate>
-      <Plate className={props.guest2 ? "" : "hidden"}>
+      <Plate className={props.guest2 ? '' : 'hidden'}>
         <h1>{guest2.name}</h1>
-        <h2><i className={"social social-"+guest2.type}></i>{guest2.contact}</h2>
+        <h2><i className={'social social-' + guest2.type} />{guest2.contact}</h2>
       </Plate>
-      <Plate className={props.guest3 ? "" : "hidden"}>
+      <Plate className={props.guest3 ? '' : 'hidden'}>
         <h1>{guest3.name}</h1>
-        <h2><i className={"social social-"+guest3.type}></i>{guest3.contact}</h2>
+        <h2><i className={'social social-' + guest3.type} />{guest3.contact}</h2>
       </Plate>
-      <Plate className={props.host2 ? "" : "hidden"}>
+      <Plate className={props.host2 ? '' : 'hidden'}>
         <h1>{host2.name}</h1>
-        <h2><i className={"social social-"+host2.type}></i>{host2.contact}</h2>
+        <h2><i className={'social social-' + host2.type} />{host2.contact}</h2>
       </Plate>
     </PlateArea>
   )

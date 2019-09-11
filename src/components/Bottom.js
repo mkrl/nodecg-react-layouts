@@ -16,7 +16,7 @@ const Bottomground = styled.section`
   justify-content: space-between;
 `
 const Section = styled.div`
-  flex-grow: ${props => props.grow ? props.grow  : "unset" };
+  flex-grow: ${props => props.grow ? props.grow : 'unset'};
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -24,16 +24,16 @@ const Section = styled.div`
   align-self: center;
   justify-content: center;
   height: 100%;
-  padding: 0 ${props => Number(props.baseHeight)/5}rem;
+  padding: 0 ${props => Number(props.baseHeight) / 5}rem;
   min-width: 200px;
   max-width: 400px;
   
   & > h1 {
     text-align: center;
-    font-size: ${props => Number(props.baseHeight)/3}rem;
+    font-size: ${props => Number(props.baseHeight) / 3}rem;
   }
   & > h2 {
-    font-size: ${props => Number(props.baseHeight)/5}rem;
+    font-size: ${props => Number(props.baseHeight) / 5}rem;
   }
   & > div.container {
     max-width: 300px;
@@ -44,9 +44,7 @@ const Section = styled.div`
   }
 `
 
-
 const Bottom = props => {
-
   const baseHeight = Number(variables.bottomBarHeight) * props.height
 
   const Logo = () => {
@@ -54,8 +52,8 @@ const Bottom = props => {
       if (props.logo.length > 0) {
         return (
           <Section baseHeight={baseHeight}>
-            <div className="container">
-              <img src={props.logo[0].url}/>
+            <div className='container'>
+              <img src={props.logo[0].url} />
             </div>
           </Section>
         )
@@ -70,7 +68,7 @@ const Bottom = props => {
       if (props.sponsorLogos.length > 0) {
         return (
           <Section baseHeight={baseHeight}>
-            <SponsorLogos logoArray={props.sponsorLogos}/>
+            <SponsorLogos logoArray={props.sponsorLogos} />
           </Section>
         )
       } else { return null }
@@ -88,7 +86,7 @@ const Bottom = props => {
       <Section baseHeight={baseHeight}>
         <h1>Local Time</h1>
         <h2>
-         <Clock format={'HH:mm:ss'} ticking={true} />
+          <Clock format='HH:mm:ss' ticking />
         </h2>
       </Section>
       <Sponsors />

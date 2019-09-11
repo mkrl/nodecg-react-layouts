@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import colors from '../config/colors'
+// (imported css works this way just fine)
+// eslint-disable-next-line no-unused-vars
 import font from '../assets/font/font.css'
 
 const Stream = styled.main`

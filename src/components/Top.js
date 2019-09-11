@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import colors from '../config/colors'
-import variables from '../config/variables'
 import pattern from '../assets/pattern'
-import SponsorLogos from './SponsorLogos'
 
 const Topground = styled.section`
   background-color: ${colors.background.primary};
@@ -20,7 +18,6 @@ const Topground = styled.section`
 `
 
 const Top = props => {
-
   return (
     <Topground baseHeight={props.height}>
       <h1>{props.onnow}</h1>

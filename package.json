@@ -87,10 +87,11 @@
   "repository": "git@github.com:mkrl/nodecg-react-layouts.git",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "parcel-bundler": "^1.12.3"
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "parcel-bundler": "^1.12.3",
+    "standard": "^14.2.0"
   },
   "dependencies": {
     "events": "^3.0.0",
@@ -108,6 +109,7 @@
   },
   "scripts": {
     "start": "parcel watch src/index.html -d graphics --public-url ./",
+    "test": "standard",
     "build": "parcel build src/index.html -d graphics --public-url ./"
   }
 }

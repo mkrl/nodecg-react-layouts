@@ -37,18 +37,17 @@ const Area = styled.div`
 `
 
 const Lowerthird = props => {
-
   if (props.title && props.text) {
-    if (props.title.length >= props.text.length/2) {
+    if (props.title.length >= props.text.length / 2) {
       return (
-        <Area className={props.visible ? "" : "hidden"}>
+        <Area className={props.visible ? '' : 'hidden'}>
           <h1>{props.title}</h1>
           <p>{props.text}</p>
         </Area>
       )
     } else {
       return (
-        <Area className={props.visible ? "" : "hidden"}>
+        <Area className={props.visible ? '' : 'hidden'}>
           <h1>{props.text}</h1>
           <p>{props.title}</p>
         </Area>
@@ -57,7 +56,6 @@ const Lowerthird = props => {
   } else {
     return null
   }
-
 }
 
 export default Lowerthird

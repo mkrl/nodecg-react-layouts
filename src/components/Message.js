@@ -28,55 +28,50 @@ const Area = styled.div`
   }
 `
 class Message extends React.Component {
-
-  constructor() {
+  constructor () {
     super()
     this.state = {
       visible: false,
       throttled: false,
-      text: "A toasty message that pops up whenever the server sends some text.",
+      text: 'A toasty message that pops up whenever the server sends some text.'
     }
     this.showMessage = this.showMessage.bind(this)
   }
 
-  componentDidMount() {
-  
+  componentDidMount () {
     // Listening for a one-time message from the server
     window.nodecg.listenFor('toastMessage', message => {
       this.showMessage(message)
     })
-  
   }
 
-  showMessage(text) {
-
+  showMessage (text) {
     // On-screen message time depends on the length of the message itself
     // It's 5 initial seconds + 1/8th a second per every message symbol
-    const duration = 5000 + text.length*125
+    const duration = 5000 + text.length * 125
 
     // Adding a throttle to prevent accidental message overlap while it's visible
     if (!this.state.throttled) {
       this.setState({ text, visible: true, throttled: true })
-      setTimeout( () => {
-        this.setState({ 
-          visible: false, 
-          throttled: false,
+      setTimeout(() => {
+        this.setState({
+          visible: false,
+          throttled: false
         })
       }, duration)
     }
-    
   }
 
-  render() {
+  render () {
     if (this.state.text) {
-        return (
-          <Area className={this.state.visible ? "" : "hidden"}>
-            <p>{this.state.text}</p>
-          </Area>
-        )
-      } else {
-        return null
-      }
+      return (
+        <Area className={this.state.visible ? '' : 'hidden'}>
+          <p>{this.state.text}</p>
+        </Area>
+      )
+    } else {
+      return null
+    }
   }
 }
 

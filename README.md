@@ -6,7 +6,7 @@ It works with NodeCG versions which satisfy this [semver](https://docs.npmjs.com
 
 ## What's inside?
 
-The bundle comes in with "CG essentials": nameplates, lower third, layout system and on-screen talent management system.  There's more stuff inside!
+The bundle comes in with "CG essentials": nameplates, lower third, toast, layout system and on-screen talent management system. There's more stuff inside!
 
 ![Dashboard overview](images/dashboard-main.png)
 
@@ -65,3 +65,5 @@ Feel free to contribute, following this conventional and simple process:
  3. Commit (`git commit -am 'Add stuff'`) 
  4. Push to the branch (`git push origin new-cool-stuff`)
  5. Create a new Pull Request
+
+Code style is maintained by [standard](https://standardjs.com).
